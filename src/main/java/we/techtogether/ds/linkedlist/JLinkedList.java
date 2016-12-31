@@ -49,6 +49,7 @@ public class JLinkedList<T extends Comparable<T>> {
 			temp.setNext(new ListNode<T>(info));
 		}
 	}
+	
 	/**
 	 * return LinkedList size.
 	 * @return
