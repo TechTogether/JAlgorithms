@@ -77,5 +77,13 @@ public class TreeNode<T extends Comparable<T>> {
 	public String toString() {
 		return "TreeNode [leftChild=" + ((null == left) ? null:left.getInfo()) + ", info=" + info + ", rightChild=" + ((null == right)  ? null:right.getInfo()) + "]";
 	}
+	
+	public boolean hasRight() {
+		return (right != null);
+	}
+	
+	public boolean hasLeft() {
+		return (left != null);
+	}
 
 }
