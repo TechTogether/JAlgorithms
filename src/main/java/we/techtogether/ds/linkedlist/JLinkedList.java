@@ -49,6 +49,22 @@ public class JLinkedList<T extends Comparable<T>> {
 			temp.setNext(new ListNode<T>(info));
 		}
 	}
+	/**
+	 * return LinkedList size.
+	 * @return
+	 */
+	public int size() {
+		if(isEmpty()) return 0;
+		
+		ListNode<T> temp = peek();
+		int count = 0;
+		if(temp != null) {
+			count++;
+			temp = temp.getNext();
+		}
+		return count;
+		
+	}
 
 	/**
 	 * To check if list is empty or not.
