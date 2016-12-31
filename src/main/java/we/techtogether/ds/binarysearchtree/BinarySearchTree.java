@@ -80,15 +80,51 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 
 	/**
-	 * Recursive InOrder Traversal.
+	 * Recursive In Order Traversal.
 	 * @param root
 	 */
 	private void inOrderHelper(TreeNode<T> root) {
-		if (root == null)
-			return;
+		if (root == null) return;
 		inOrderHelper(root.getLeft());
 		System.out.println(root);
 		inOrderHelper(root.getRight());
+	}
+	
+	/**
+	 * Pre-Order Traversal.
+	 */
+	public void preOrder() {
+		preOrderHelper(root);
+	}
+
+	/**
+	 * Recursive Pre-Order Traversal.
+	 * @param root
+	 */
+	private void preOrderHelper(TreeNode<T> root) {
+		if (root == null) return;
+		System.out.println(root);
+		inOrderHelper(root.getLeft());
+		inOrderHelper(root.getRight());
+	}
+	
+	/**
+	 * Post-Order Traversal.
+	 */
+	public void postOrder() {
+		postOrderHelper(root);
+	}
+
+	/**
+	 * Recursive Post-Order Traversal.
+	 * @param root
+	 */
+	private void postOrderHelper(TreeNode<T> root) {
+		if (root == null) return;
+		inOrderHelper(root.getLeft());
+		inOrderHelper(root.getRight());
+		System.out.println(root);
+		
 	}
 
 }
