@@ -38,7 +38,9 @@ public class JLinkedList<T extends Comparable<T>> {
 	 * @param info
 	 */
 	public void add(T info) {
-		if (isEmpty()) {
+		if (info == null) 
+			throw new RuntimeException("Null not allowed.");
+		else if (isEmpty()) {
 			head = new ListNode<T>(info);
 		} else {
 			ListNode<T> temp = peek();
@@ -47,6 +49,18 @@ public class JLinkedList<T extends Comparable<T>> {
 				temp = temp.getNext();
 			}
 			temp.setNext(new ListNode<T>(info));
+		}
+	}
+	
+	public void addFirst(T info) {
+		if (info == null) 
+			throw new RuntimeException("Null not allowed.");
+		if (isEmpty()) 
+			head = new ListNode<T>(info);
+		else {
+			ListNode<T> node = new ListNode<T>(info);
+			node.setNext(head);
+			head = node;
 		}
 	}
 	
