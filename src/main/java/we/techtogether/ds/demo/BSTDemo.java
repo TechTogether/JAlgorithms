@@ -24,7 +24,7 @@ public class BSTDemo {
 		tree.inOrder(); // should sorted
 		System.out.println("Hello");
 		tree.levelOrder();
-		System.out.println("Done");
+		System.out.println("Total Node " + tree.size());
 	}
 
 }

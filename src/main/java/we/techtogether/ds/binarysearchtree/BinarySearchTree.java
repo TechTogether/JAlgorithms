@@ -146,5 +146,25 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		}
 		
 	}
+	
+	/**
+	 * To calculate node count.
+	 * @return int
+	 */
+	public int size() {
+		if(isEmpty()) return 0;
+		else return countHelper(root);
+	}
+	
+	/**
+	 * node count helper.
+	 * @param root
+	 * @return int 
+	 */
+	public int countHelper(TreeNode<T> root) {
+		if(root == null) return 0;
+		else return 1 + countHelper(root.getLeft()) + countHelper(root.getRight());
+	}
 
+	
 }
