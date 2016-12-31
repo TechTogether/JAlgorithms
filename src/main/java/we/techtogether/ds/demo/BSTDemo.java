@@ -22,6 +22,8 @@ public class BSTDemo {
 	public static void main(String[] args) {
 		insertHelper();
 		tree.inOrder(); // should sorted
+		System.out.println("Hello");
+		tree.levelOrder();
 		System.out.println("Done");
 	}
 

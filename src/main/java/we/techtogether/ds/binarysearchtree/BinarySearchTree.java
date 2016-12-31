@@ -3,6 +3,8 @@
  */
 package we.techtogether.ds.binarysearchtree;
 
+import java.util.LinkedList;
+
 import we.techtogether.ds.node.TreeNode;
 
 /**
@@ -124,6 +126,24 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		inOrderHelper(root.getLeft());
 		inOrderHelper(root.getRight());
 		System.out.println(root);
+		
+	}
+	
+	/**
+	 * level Order Traversal. 
+	 */
+	public void levelOrder() {
+		if(isEmpty()) return;
+		
+		LinkedList<TreeNode<T>> queue = new LinkedList<TreeNode<T>>();
+		queue.push(root); 
+		
+		while(!queue.isEmpty()) {
+			TreeNode<T> node = queue.remove(0);
+			System.out.println(node);
+			if(node.hasLeft()) queue.add(node.getLeft());
+			if(node.hasRight()) queue.add(node.getRight());
+		}
 		
 	}
 
