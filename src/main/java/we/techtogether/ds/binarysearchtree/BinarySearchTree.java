@@ -71,5 +71,24 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	public boolean isEmpty() {
 		return (root == null);
 	}
+	
+	/**
+	 * In Order Traversal.
+	 */
+	public void inOrder() {
+		inOrderHelper(root);
+	}
+
+	/**
+	 * Recursive InOrder Traversal.
+	 * @param root
+	 */
+	private void inOrderHelper(TreeNode<T> root) {
+		if (root == null)
+			return;
+		inOrderHelper(root.getLeft());
+		System.out.println(root);
+		inOrderHelper(root.getRight());
+	}
 
 }
