@@ -3,7 +3,7 @@ package customCollections.customizedArrayList;
 public class YourOwnArrayListImpl {
 	public static void main(String[] args) {
 
-		YourOwnArrayList<String> strList = new YourOwnArrayList<>();
+		YourOwnArrayList<String> strList = new YourOwnArrayList<String>();
 
 		strList.add("TechTogether");
 		strList.add("TalkTogether");
