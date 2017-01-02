@@ -1,4 +1,4 @@
-package customCollections.customizedArrayList;
+package we.techtogether.custom.collections.customList;
 
 import java.util.Arrays;
 
