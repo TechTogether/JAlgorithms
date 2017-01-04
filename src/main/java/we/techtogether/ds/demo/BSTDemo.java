@@ -25,6 +25,7 @@ public class BSTDemo {
 		System.out.println("Hello");
 		tree.levelOrder();
 		System.out.println("Total Node " + tree.size());
+		System.out.println("Find Node " + tree.search(30));
 	}
 
 }

@@ -165,6 +165,27 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		if(root == null) return 0;
 		else return 1 + countHelper(root.getLeft()) + countHelper(root.getRight());
 	}
+	
+	/**
+	 * Binary Search on BST.
+	 * @param info
+	 * @return TreeNode<T>
+	 */
+	public TreeNode<T> search(T info) {
+		if(info == null) throw new RuntimeException("Null is not allowed in Tree");
+		if(isEmpty()) return null;
+		return searchHelper(root, info);
+	}
+	
+	private TreeNode<T> searchHelper(TreeNode<T> root, T info) {
+		if(root == null) 
+			return root;
+		else if(root.getInfo().compareTo(info) > 0 ) 
+			return searchHelper(root.getLeft(), info);
+		else if (root.getInfo().compareTo(info) < 0 )
+			return searchHelper(root.getRight(), info);
+		else return root;
+	}
 
 	
 }
