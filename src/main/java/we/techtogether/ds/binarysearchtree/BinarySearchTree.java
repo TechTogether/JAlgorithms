@@ -186,6 +186,21 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			return searchHelper(root.getRight(), info);
 		else return root;
 	}
-
+	
+	/**
+	 * returns true if tree is BST else return false.
+	 * @return boolean
+	 */
+	public boolean isBinarySearch() {
+		return isBinarySearchHelper(root);
+	}
+	
+	private boolean isBinarySearchHelper(TreeNode<T> root) {
+		if(root == null) return true;
+		boolean left =  (root.hasLeft() ? root.getInfo().compareTo(root.getLeft().getInfo()) > 0: true);
+		boolean right = (root.hasRight() ? root.getInfo().compareTo(root.getRight().getInfo()) < 0: true);	
+//		System.out.println(root + " Left and Right " + left +"    " + right);
+		return left && right && isBinarySearchHelper(root.getLeft()) && isBinarySearchHelper(root.getRight());
+	}
 	
 }
