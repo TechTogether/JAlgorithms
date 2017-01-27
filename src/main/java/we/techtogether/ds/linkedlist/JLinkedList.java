@@ -99,5 +99,18 @@ public class JLinkedList<T extends Comparable<T>> {
 			throw new RuntimeException("LinkedList is Empty.");
 		return head;
 	}
+	
+	public void reverse() {
+		
+		ListNode<T> next = head.getNext(); 
+		head.setNext(null);
+		
+		while(next != null) {
+			ListNode<T> temp = next.getNext();
+			next.setNext(head);
+			head = next;
+			next = temp;
+		}
+	}
 
 }
